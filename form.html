@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMUTNB - กรอกข้อมูลเพื่อสมัครเรียน</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Sarabun', 'Tahoma', 'Arial', sans-serif;
+        }
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            color: #333;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Header */
+        .header {
+            background: linear-gradient(to right, #ffd15c, #ff944d);
+            display: flex;
+            align-items: center;
+            padding: 15px 5%;
+            width: 100%;
+        }
+        .header-logo {
+            margin-right: 20px;
+        }
+        .logo-img {
+            height: 110px;
+            width: auto;
+        }
+        .header-text {
+            text-align: center;
+            flex-grow: 1;
+        }
+        .header-text h1 {
+            font-size: 38px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .header-text h2 {
+            font-size: 20px;
+            color: #000;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .header-text h3 {
+            font-size: 18px;
+            color: #000;
+            font-weight: bold;
+        }
+        
+        /* Navigation */
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 5%;
+            border-bottom: 1px solid #ddd;
+            width: 100%;
+            background-color: #fff;
+        }
+        .welcome-text {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-btn {
+            display: inline-block;
+            background-color: #e0e0e0;
+            color: #000;
+            text-decoration: none;
+            padding: 8px 25px;
+            font-size: 16px;
+            border-radius: 2px;
+            text-align: center;
+            border: 1px solid #ccc;
+            transition: background-color 0.2s;
+        }
+        .nav-btn:hover {
+            background-color: #d0d0d0;
+        }
+
+        /* Content */
+        .content {
+            flex: 1;
+            padding: 30px 5%;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .form-header-bg {
+            background-color: #dcdcdc;
+            padding: 12px 24px;
+            font-size: 22px;
+            font-weight: bold;
+            margin-bottom: 25px;
+            display: inline-block;
+            border-radius: 4px;
+        }
+        .form-section-title {
+            font-size: 22px;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 5px;
+        }
+        
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .form-group label {
+            width: 250px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .form-group input[type="text"], .form-group input[type="file"], .form-group select {
+            flex: 1;
+            min-width: 280px;
+            padding: 10px 14px;
+            background-color: #f8f8f8;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 15px;
+        }
+        
+        /* Grid for personal info */
+        .form-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .form-item {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        .form-item label {
+            font-size: 15px;
+            font-weight: bold;
+        }
+        .form-item input {
+            background-color: #f8f8f8;
+            border: 1px solid #ccc;
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 15px;
+            width: 100%;
+        }
+        
+        .w-1-3 { flex: 1; min-width: 250px; }
+        .w-1-2 { flex: 2; min-width: 300px; }
+        
+        .submit-btn-container {
+            margin-top: 40px;
+            text-align: center;
+        }
+        .submit-btn {
+            background-color: #f39c12;
+            color: #fff;
+            border: none;
+            padding: 12px 40px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .submit-btn:hover {
+            background-color: #e67e22;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px 5%;
+            margin-top: auto;
+            width: 100%;
+            background-color: #ffffff;
+        }
+        .footer-line {
+            border: none;
+            border-top: 3px solid #000;
+            margin-bottom: 15px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .footer p {
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-logo">
+                <img src="images/logo.png" alt="KMUTNB Logo" class="logo-img">
+            </div>
+            <div class="header-text">
+                <h1>KMUTNB</h1>
+                <h2>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</h2>
+                <h3>วิทยาเขตปราจีนบุรี</h3>
+            </div>
+        </div>
+        <div class="nav-bar">
+            <div class="welcome-text">ยินดีต้อนรับเข้าสู่เว็บไซต์</div>
+            <div class="nav-buttons">
+                <a href="index.html" class="nav-btn">หน้าแรก</a>
+                <a href="apply.html" class="nav-btn" style="background-color: #888; color: white;">รับสมัครเรียน</a>
+                <a href="contact.html" class="nav-btn">ติดต่อ</a>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="form-header-bg">กรอกข้อมูลเพื่อสมัครเรียน</div>
+            
+            <form action="#" method="post" onsubmit="alert('บันทึกข้อมูลเรียบร้อยแล้ว'); return false;">
+                <div class="form-group">
+                    <label>เลขบัตรประจำตัวประชาชน *</label>
+                    <input type="text" name="id_card" required placeholder="กรอกเลขบัตรประจำตัวประชาชน 13 หลัก">
+                </div>
+                <div class="form-group">
+                    <label>เอกสารประกอบการสมัคร *</label>
+                    <input type="file" name="parents_id" accept="image/*" capture="environment" required>
+                </div>
+                <div class="form-group">
+                    <label>สูติบัตร/บัตรประชาชน *</label>
+                    <input type="file" name="applicant_id" accept="image/*" capture="environment" required>
+                </div>
+                <div class="form-group">
+                    <label>บัตรประชาชน บิดา/มารดา *</label>
+                    <input type="file" name="parents_id" accept="image/*" capture="environment" required>
+                </div>
+
+                <div class="form-section-title">ข้อมูลส่วนตัว</div>
+
+                <div class="form-grid">
+                    <div class="form-item w-1-3">
+                        <label>ชื่อ *</label>
+                        <input type="text" name="firstname" required>
+                    </div>
+                    <div class="form-item w-1-3">
+                        <label>นามสกุล *</label>
+                        <input type="text" name="lastname" required>
+                    </div>
+                    <div class="form-item w-1-3">
+                        <label>วัน/เดือน/ปี/เกิด *</label>
+                        <input type="text" name="dob" placeholder="วว/ดด/ปปปป" required>
+                    </div>
+
+                    <div class="form-item w-1-3">
+                        <label>เพศ *</label>
+                        <input type="text" name="gender" required>
+                    </div>
+                    <div class="form-item w-1-3">
+                        <label>เชื้อชาติ *</label>
+                        <input type="text" name="ethnicity" required>
+                    </div>
+                    <div class="form-item w-1-3">
+                        <label>สัญชาติ *</label>
+                        <input type="text" name="nationality" required>
+                    </div>
+
+                    <div class="form-item w-1-3">
+                        <label>ศาสนา *</label>
+                        <input type="text" name="religion" required>
+                    </div>
+                    <div class="form-item w-1-2">
+                        <label>สถานที่จบการศึกษา *</label>
+                        <input type="text" name="school" required placeholder="ชื่อโรงเรียน/วิทยาลัย">
+                    </div>
+                </div>
+
+                <div class="submit-btn-container">
+                    <button type="submit" class="submit-btn">ส่งข้อมูลสมัคร</button>
+                </div>
+            </form>
+        </div>
+        
+        <div class="footer">
+            <hr class="footer-line">
+            <p>KMUTNB@email.kmutnb.ac.th</p>
+        </div>
+    </div>
+</body>
+</html>

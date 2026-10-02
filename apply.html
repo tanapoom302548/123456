@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMUTNB - รับสมัครเรียน</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Sarabun', 'Tahoma', 'Arial', sans-serif;
+        }
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            color: #333;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Header */
+        .header {
+            background: linear-gradient(to right, #ffd15c, #ff944d);
+            display: flex;
+            align-items: center;
+            padding: 15px 5%;
+            width: 100%;
+        }
+        .header-logo {
+            margin-right: 20px;
+        }
+        .logo-img {
+            height: 110px;
+            width: auto;
+        }
+        .header-text {
+            text-align: center;
+            flex-grow: 1;
+        }
+        .header-text h1 {
+            font-size: 38px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .header-text h2 {
+            font-size: 20px;
+            color: #000;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .header-text h3 {
+            font-size: 18px;
+            color: #000;
+            font-weight: bold;
+        }
+        
+        /* Navigation */
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 5%;
+            border-bottom: 1px solid #ddd;
+            width: 100%;
+            background-color: #fff;
+        }
+        .welcome-text {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-btn {
+            display: inline-block;
+            background-color: #e0e0e0;
+            color: #000;
+            text-decoration: none;
+            padding: 8px 25px;
+            font-size: 16px;
+            border-radius: 2px;
+            text-align: center;
+            border: 1px solid #ccc;
+            transition: background-color 0.2s;
+        }
+        .nav-btn:hover {
+            background-color: #d0d0d0;
+        }
+
+        /* Content */
+        .content {
+            flex: 1;
+            padding: 30px 5%;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        .section-title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .btn-fill-form {
+            background-color: #f39c12;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 24px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 4px;
+            display: inline-block;
+            transition: background-color 0.2s;
+        }
+        .btn-fill-form:hover {
+            background-color: #e67e22;
+        }
+
+        /* Table Style */
+        .table-responsive {
+            width: 100%;
+            overflow-x: auto;
+        }
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+            background-color: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        .schedule-table th, .schedule-table td {
+            padding: 14px 18px;
+            text-align: left;
+        }
+        .schedule-table th {
+            background-color: #dcdcdc;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            text-align: center;
+        }
+        .schedule-table td.faculty-header {
+            background-color: #ebebeb;
+            font-weight: bold;
+            font-size: 16px;
+        }
+        .schedule-table tr.data-row {
+            border-bottom: 1px solid #f0f0f0;
+            background-color: #fafafa;
+        }
+        .schedule-table tr.data-row:nth-child(even) {
+            background-color: #ffffff;
+        }
+        .col-program {
+            width: 50%;
+        }
+        .col-date {
+            width: 25%;
+            text-align: center !important;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px 5%;
+            margin-top: auto;
+            width: 100%;
+            background-color: #ffffff;
+        }
+        .footer-line {
+            border: none;
+            border-top: 3px solid #000;
+            margin-bottom: 15px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .footer p {
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-logo">
+                <img src="images/logo.png" alt="KMUTNB Logo" class="logo-img">
+            </div>
+            <div class="header-text">
+                <h1>KMUTNB</h1>
+                <h2>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</h2>
+                <h3>วิทยาเขตปราจีนบุรี</h3>
+            </div>
+        </div>
+        <div class="nav-bar">
+            <div class="welcome-text">ยินดีต้อนรับเข้าสู่เว็บไซต์</div>
+            <div class="nav-buttons">
+                <a href="index.html" class="nav-btn">หน้าแรก</a>
+                <a href="apply.html" class="nav-btn" style="background-color: #888; color: white;">รับสมัครเรียน</a>
+                <a href="contact.html" class="nav-btn">ติดต่อ</a>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="section-header">
+                <div class="section-title">กำหนดการรับสมัคร</div>
+                <a href="form.html" class="btn-fill-form">กรอกข้อมูลสมัคร</a>
+            </div>
+
+            <div class="table-responsive">
+                <table class="schedule-table">
+                    <thead>
+                        <tr>
+                            <th colspan="3">คณะ / โครงการ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- คณะครุศาสตร์อุตสาหกรรม -->
+                        <tr>
+                            <td class="faculty-header" colspan="1">คณะครุศาสตร์อุตสาหกรรม</td>
+                            <td class="faculty-header col-date">วันเริ่มต้น</td>
+                            <td class="faculty-header col-date">วันสิ้นสุด</td>
+                        </tr>
+                        <tr class="data-row">
+                            <td class="col-program">โครงการโควตาเรียนดี (วุฒิ ม.3 ม.6 ปวช. ปวส)</td>
+                            <td class="col-date">1 กันยายน 2569</td>
+                            <td class="col-date">30 พฤศจิกายน 2569</td>
+                        </tr>
+                        <tr class="data-row">
+                            <td class="col-program">โครงการ Portfolio</td>
+                            <td class="col-date">1 กันยายน 2569</td>
+                            <td class="col-date">30 พฤศจิกายน 2569</td>
+                        </tr>
+
+                        <!-- วิทยาลัยเทคโนโลยีอุตสาหกรรม -->
+                        <tr>
+                            <td class="faculty-header" colspan="3">วิทยาลัยเทคโนโลยีอุตสาหกรรม</td>
+                        </tr>
+                        <tr class="data-row">
+                            <td class="col-program">โครงการโควตาเรียนดี (วุฒิ ม.3 ม.6 ปวช. ปวส)</td>
+                            <td class="col-date">1 กันยายน 2569</td>
+                            <td class="col-date">30 พฤศจิกายน 2569</td>
+                        </tr>
+                        <tr class="data-row">
+                            <td class="col-program">โครงการโควตาเรียนดี</td>
+                            <td class="col-date">1 กันยายน 2569</td>
+                            <td class="col-date">30 พฤศจิกายน 2569</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <hr class="footer-line">
+            <p>KMUTNB@email.kmutnb.ac.th</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KMUTNB - ติดต่อ</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Sarabun', 'Tahoma', 'Arial', sans-serif;
+        }
+        html, body {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #f5f5f5;
+            color: #333;
+            overflow-x: hidden;
+        }
+        .container {
+            width: 100%;
+            min-height: 100vh;
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+        }
+        /* Header */
+        .header {
+            background: linear-gradient(to right, #ffd15c, #ff944d);
+            display: flex;
+            align-items: center;
+            padding: 15px 5%;
+            width: 100%;
+        }
+        .header-logo {
+            margin-right: 20px;
+        }
+        .logo-img {
+            height: 110px;
+            width: auto;
+        }
+        .header-text {
+            text-align: center;
+            flex-grow: 1;
+        }
+        .header-text h1 {
+            font-size: 38px;
+            color: #ffffff;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.4);
+            font-family: 'Times New Roman', serif;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .header-text h2 {
+            font-size: 20px;
+            color: #000;
+            font-weight: bold;
+            margin-top: 5px;
+        }
+        .header-text h3 {
+            font-size: 18px;
+            color: #000;
+            font-weight: bold;
+        }
+        
+        /* Navigation */
+        .nav-bar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 5%;
+            border-bottom: 1px solid #ddd;
+            width: 100%;
+            background-color: #fff;
+        }
+        .welcome-text {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        .nav-btn {
+            display: inline-block;
+            background-color: #e0e0e0;
+            color: #000;
+            text-decoration: none;
+            padding: 8px 25px;
+            font-size: 16px;
+            border-radius: 2px;
+            text-align: center;
+            border: 1px solid #ccc;
+            transition: background-color 0.2s;
+        }
+        .nav-btn:hover {
+            background-color: #d0d0d0;
+        }
+
+        /* Content */
+        .content {
+            flex: 1;
+            padding: 30px 5%;
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .page-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .divider {
+            border: none;
+            border-top: 1px solid #ccc;
+            margin-bottom: 25px;
+        }
+        .map-section {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .map-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .map-iframe-container {
+            width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        /* Contact Details Grid */
+        .info-box {
+            background-color: #fcf4e8;
+            padding: 25px 30px;
+            display: flex;
+            justify-content: space-between;
+            border-radius: 6px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .info-col {
+            flex: 1;
+            min-width: 280px;
+        }
+        .info-col h4 {
+            font-size: 18px;
+            font-weight: bold;
+            margin-bottom: 12px;
+            color: #d35400;
+        }
+        .info-col p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #333;
+        }
+        .info-col a {
+            color: #0066cc;
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 20px 5%;
+            margin-top: auto;
+            width: 100%;
+            background-color: #ffffff;
+        }
+        .footer-line {
+            border: none;
+            border-top: 3px solid #000;
+            margin-bottom: 15px;
+            width: 90%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .footer p {
+            font-size: 14px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header-logo">
+                <img src="images/logo.png" alt="KMUTNB Logo" class="logo-img">
+            </div>
+            <div class="header-text">
+                <h1>KMUTNB</h1>
+                <h2>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ</h2>
+                <h3>วิทยาเขตปราจีนบุรี</h3>
+            </div>
+        </div>
+        <div class="nav-bar">
+            <div class="welcome-text">ยินดีต้อนรับเข้าสู่เว็บไซต์</div>
+            <div class="nav-buttons">
+                <a href="index.html" class="nav-btn">หน้าแรก</a>
+                <a href="apply.html" class="nav-btn">รับสมัครเรียน</a>
+                <a href="contact.html" class="nav-btn" style="background-color: #888; color: white;">ติดต่อ</a>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="page-title">ติดต่อ</div>
+            <hr class="divider">
+
+            <div class="map-section">
+                <div class="map-title">แผนที่ มจพ. ปราจีนบุรี</div>
+                <div class="map-iframe-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3870.835848529202!2d101.3444400758406!3d14.145582987114481!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311c5874c77c68a3%3A0xb3513dd5480ba284!2z4Lih4Lir4Liy4Lin4Li04LiX4Liy4Lil4Lia4LmA4LiX4LiE4LmC4LiZ4LmC4Lil4LmJ4Lmg4Lij4Liw4LmA4LiB4Lil4LmE4LiU4LmMIOC4p-C4tOC4l-C4o-C4o-C4q_C4o-C4meC4seC4gA!5e0!3m2!1sth!2sth!4v1700000000000!5m2!1sth!2sth" 
+                        width="100%" 
+                        height="400" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+
+            <div class="info-box">
+                <div class="info-col">
+                    <h4>สถานที่ตั้ง</h4>
+                    <p>มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ วิทยาเขตปราจีนบุรี</p>
+                    <p>129 ม.21 ตำบลเนินหอม อำเภอเมือง จังหวัดปราจีนบุรี 25230</p>
+                </div>
+                <div class="info-col">
+                    <h4>ติดต่อ</h4>
+                    <p>โทร. 037-217-300</p>
+                    <p>แฟกซ์ 037-217-333</p>
+                    <p>อีเมลติดต่อ : <a href="mailto:contact-prachinburi@op.kmutnb.ac.th">contact-prachinburi@op.kmutnb.ac.th</a></p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <hr class="footer-line">
+            <p>KMUTNB@email.kmutnb.ac.th</p>
+        </div>
+    </div>
+</body>
+</html>
